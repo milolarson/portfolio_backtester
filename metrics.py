@@ -38,6 +38,12 @@ def max_drawdown(prices):
 
     return ticker_max_drawdown 
 
+def drawdown_series(prices):
+    running_max = prices.cummax()
+    ticker_drawdown = (running_max - prices) / running_max
+
+    return ticker_drawdown
+
 if __name__ == "__main__":
     from data import fetch_prices
 

@@ -29,10 +29,3 @@ def visualize_drawdown(result: BacktestResult):
     plt.legend()
     plt.grid()
     plt.show()
-
-if __name__ == "__main__":
-    from backtest import backtest
-
-    result = backtest(["AAPL", "EXPD", "PLTR"], [0.5, 0.3, 0.2], "2021-01-01", "2024-01-01")
-    visualize_backtest_result(result)
-    visualize_drawdown(result)

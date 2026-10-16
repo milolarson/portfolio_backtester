@@ -1,11 +1,3 @@
-"""
-data.py
-
-Handles fetching and cleaning historical price data for the portfolio
-backtester. The only public function other modules should import from
-here is fetch_prices().
-"""
-
 import pandas as pd
 import yfinance as yf
 
@@ -48,10 +40,3 @@ def fetch_risk_free_rate(start_date, end_date) -> float:
     risk_free_rate = treasury_data["^TNX"].mean() / 100
 
     return risk_free_rate
-
-if __name__ == "__main__":
-    # Quick manual check when running this file directly.
-    df = fetch_prices(["AAPL", "EXPD", "PLTR"], "2021-01-01", "2024-01-01")
-    print(df.head())
-    print(df.tail())
-    print(df.shape)

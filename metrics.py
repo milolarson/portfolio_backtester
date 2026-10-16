@@ -43,15 +43,3 @@ def drawdown_series(prices):
     ticker_drawdown = (running_max - prices) / running_max
 
     return ticker_drawdown
-
-if __name__ == "__main__":
-    from data import fetch_prices
-
-    prices = fetch_prices(["AAPL"], "2021-01-01", "2024-01-01")
-    print(prices.head())
-    print(prices.tail())
-    print(cagr(prices))
-    returns = daily_returns(prices)
-    print(volatility(returns))
-    print(sharpe_ratio(prices, returns))
-    print(max_drawdown(prices))

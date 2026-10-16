@@ -49,5 +49,5 @@ def backtest(tickers, weights, start_date, end_date, benchmark_ticker="SPY", plo
     return result
 
 if __name__ == "__main__":
-    result = backtest(["AAPL", "EXPD", "PLTR"], [0.5, 0.3, 0.2], "2021-01-01", "2024-01-01")
+    result = backtest(["AAPL", "EXPD", "PLTR"], [0.5, 0.3, 0.2], "2021-01-01", "2026-10-16")
     print(result)

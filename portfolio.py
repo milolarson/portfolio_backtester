@@ -23,15 +23,3 @@ def portfolio_value(weighted_returns, initial_investment=10000):
     weighted_portfolio_return = weighted_cumulative_returns * initial_investment
 
     return weighted_portfolio_return
-
-if __name__ == "__main__":
-    from data import fetch_prices
-    from metrics import daily_returns
-
-    weights = [0.5, 0.3, 0.2]
-    prices = fetch_prices(["AAPL", "EXPD"], "2021-01-01", "2024-01-01")
-    returns = daily_returns(prices)
-    
-    result = portfolio_returns(returns, weights)
-    print(result.head())
-    print(result.tail())
